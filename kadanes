@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+long long maxSubarraySum(int A[], int n)
+{
+  long long ans = A[0], j, sum = 0;
+  for ( int i = 0; i < n; i++) {
+    sum += A[i];
+    ans = max(sum, ans);
+    sum = max(sum, 0ll);
+  }
+  ans = max(sum, ans);
+  return ans;
+}
+
+//https://leetcode.com/problems/maximum-subarray/discuss/1595195/C%2B%2BPython-7-Simple-Solutions-w-Explanation-or-Brute-Force-%2B-DP-%2B-Kadane-%2B-Divide-and-Conquer
